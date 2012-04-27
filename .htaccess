@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Use custom router for redirect
+RewriteCond %{HTTP_HOST} ^example.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www.example.com$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php [L]
