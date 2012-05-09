@@ -1,19 +1,17 @@
 <?php
 
 	$route = array(
-		'' => 'Resume',
+		'' => 'home_page.php',
 
-		'timetable' => 'about/docs/Timetable.pdf',
-
-		'tcat' => array(
-			'' => 'http://tcatoronto.com/',
-			'mms' => 'http://tcatoronto.leejefon.com/member'
+		'g' => array(
+			'' => 'http://google.com/',
+			'm' => 'https://gmail.com',
+			'c' => 'https://www.google.com/calendar/render',
+			'd' => 'https://drive.google.com'
 		),
 
 		'fb' => 'project/facebook',
-		'wu' => 'project/webutils',
 
-		'wp' => 'http://blog.leejefon.com',
 		'urly' => 'http://urly.cc',
 	);
 
@@ -25,6 +23,10 @@
 			array_shift($sub);
 			array_shift($sub);
 			$url .= "/" . implode("/", $sub);
+
+			if (substr($url, 0, 4) != "http") {
+				$url = "/" . $url;
+			}
 		}
 
 		// Get request: copy same thing to the end of the new URL
