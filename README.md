@@ -16,7 +16,8 @@ Features
 
 * If the URL has more levels than the defined routes, it will still redirect with the rest of URL append to the end
 
-```Example:
+Example:
+```
 $route = array(
 	'hello' => array(
 		'world' => 'path/to/hello/world'
@@ -28,7 +29,8 @@ Then http://example.com/hello/world/i/am/jeff will go to http://example.com/path
 
 * GET Parameters are passed to the redirected URL
 
-```Example:
+Example:
+```
 $route = array(
 	'test' => 'http://test.example.com/query'
 );
@@ -38,7 +40,8 @@ Then http://example.com/test?id=2&name=jeff will go to http://test.example.com/q
 
 * POST Parameters are executed, and results will be echoed.  Good for Ajax calls
 
-```Example:
+Example:
+```
 $route = array(
 	'test' => 'http://test.example.com/update'
 );
