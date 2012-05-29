@@ -41,8 +41,8 @@
 			$ch = curl_init();
 
 			//set the url, number of POST vars, POST data
-			curl_setopt($ch, CURLOPT_URL, $url);
-			curl_setopt($ch, CURLOPT_POST, count($_POST));
+			curl_setopt($ch, CURLOPT_URL, rtrim($url, "/"));
+			curl_setopt($ch, CURLOPT_POST, true);
 			curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($_POST));
 
 			//execute post
