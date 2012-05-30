@@ -1,4 +1,10 @@
 <?php
+/*
+ * SimplePHPRedirector
+ *
+ * Written By: Jeff Lee
+ * Date Created: 2012/04/28
+ */
 
 	$route = array(
 		'' => 'home_page.php',
@@ -38,10 +44,9 @@
 		// Only for Ajax requests
 		if (!empty($_POST)) {
 			//open connection
-			$ch = curl_init();
+			$ch = curl_init(rtrim($url, "/"));
 
 			//set the url, number of POST vars, POST data
-			curl_setopt($ch, CURLOPT_URL, rtrim($url, "/"));
 			curl_setopt($ch, CURLOPT_POST, true);
 			curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($_POST));
 
@@ -50,8 +55,6 @@
 
 			//close connection
 			curl_close($ch);
-
-			echo $result;
 
 			return ;
 		}
