@@ -63,6 +63,8 @@
 	}
 
 	function route($uri, $route) {
+		global $errorPage;
+
 		foreach ($route as $key => $val) {
 			if ($uri[1] == $key) {
 				if (is_array($val)) {
@@ -76,7 +78,7 @@
 			}
 		}
 
-		include($errprPage);
+		include($errorPage);
 	}
 
 	route(explode("/", $_SERVER['REDIRECT_URL']), $route);
