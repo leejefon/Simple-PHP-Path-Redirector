@@ -28,7 +28,10 @@
 		if (is_array($sub)) {
 			array_shift($sub);
 			array_shift($sub);
-			$url .= "/" . implode("/", $sub);
+			
+			if (count($sub) != 0) {
+				$url .= "/" . implode("/", $sub);
+			}
 
 			if (substr($url, 0, 4) != "http") {
 				$url = "/" . $url;
